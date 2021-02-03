@@ -4,7 +4,7 @@ import java.util.Optional;
 import java.util.stream.IntStream;
 
 /**
- * Thread Join方法测试
+ * Thread的join方法详细介绍
  *
  * @author yangjian201127@credithc.com
  * @date 2021-02-03 下午 05:40
@@ -20,24 +20,6 @@ public class ThreadJoin {
 
         //interrupt、isInterrupted：判断当前线程是否被中断
 //        m3();
-    }
-
-    private static void m2() throws InterruptedException {
-        long startTimestamp = System.currentTimeMillis();
-        Thread t1 = new Thread(new CaptureRunnable("M1", 10_000L));
-        Thread t2 = new Thread(new CaptureRunnable("M2", 12_000L));
-        Thread t3 = new Thread(new CaptureRunnable("M3", 15_000L));
-
-        t1.start();
-        t2.start();
-        t3.start();
-
-        t1.join();
-        t2.join();
-        t3.join();
-
-        long endTimestamp = System.currentTimeMillis();
-        System.out.printf("Save data begin timestamp is:%s, end timestamp is:%s\n", startTimestamp, endTimestamp);
     }
 
     private static void m3() {
@@ -73,6 +55,25 @@ public class ThreadJoin {
 
 
     }
+
+    private static void m2() throws InterruptedException {
+        long startTimestamp = System.currentTimeMillis();
+        Thread t1 = new Thread(new CaptureRunnable("M1", 10_000L));
+        Thread t2 = new Thread(new CaptureRunnable("M2", 12_000L));
+        Thread t3 = new Thread(new CaptureRunnable("M3", 15_000L));
+
+        t1.start();
+        t2.start();
+        t3.start();
+
+        t1.join();
+        t2.join();
+        t3.join();
+
+        long endTimestamp = System.currentTimeMillis();
+        System.out.printf("Save data begin timestamp is:%s, end timestamp is:%s\n", startTimestamp, endTimestamp);
+    }
+
 
     /**
      * join方法：阻塞当前线程，直到该线程执行结束
