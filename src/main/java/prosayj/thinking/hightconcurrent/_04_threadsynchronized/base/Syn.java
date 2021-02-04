@@ -7,6 +7,7 @@ package prosayj.thinking.hightconcurrent._04_threadsynchronized.base;
  * @version V1.0.0
  * @date 2021/2/5 0:25
  */
+@FunctionalInterface
 public interface Syn {
     void myRun();
 }
