@@ -1,7 +1,7 @@
 package prosayj.thinking.hightconcurrent.chapter6;
 
 /**
- * @author yangjian201127@credithc.com
+ * @author yangjian
  * @date 2021-02-04 上午 04:55
  * @since 1.0.0
  */

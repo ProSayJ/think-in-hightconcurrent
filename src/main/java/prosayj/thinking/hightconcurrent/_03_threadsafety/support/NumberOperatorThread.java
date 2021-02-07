@@ -1,4 +1,4 @@
-package prosayj.thinking.hightconcurrent._03_threadsafety.base;
+package prosayj.thinking.hightconcurrent._03_threadsafety.support;
 
 /**
  * 数字多线程操作类

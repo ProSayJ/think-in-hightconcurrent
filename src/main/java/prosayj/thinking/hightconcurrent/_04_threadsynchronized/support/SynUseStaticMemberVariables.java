@@ -1,4 +1,4 @@
-package prosayj.thinking.hightconcurrent._04_threadsynchronized.base;
+package prosayj.thinking.hightconcurrent._04_threadsynchronized.support;
 
 /**
  * synchronized：使用静态成员变量。锁当前类

@@ -3,7 +3,7 @@ package prosayj.thinking.hightconcurrent.chapter6;
 /**
  * Thread中断Interrupt方法详细讲解
  *
- * @author yangjian201127@credithc.com
+ * @author yangjian
  * @date 2021-02-04 上午 04:58
  * @since 1.0.0
  */

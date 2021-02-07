@@ -6,7 +6,7 @@ import java.util.stream.IntStream;
 /**
  * Thread的join方法详细介绍
  *
- * @author yangjian201127@credithc.com
+ * @author yangjian
  * @date 2021-02-03 下午 05:40
  * @since 1.0.0
  */

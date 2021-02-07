@@ -1,4 +1,4 @@
-package prosayj.thinking.hightconcurrent._04_threadsynchronized.base;
+package prosayj.thinking.hightconcurrent._04_threadsynchronized.support;
 
 /**
  * TODO

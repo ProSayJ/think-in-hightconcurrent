@@ -1,4 +1,4 @@
-package prosayj.thinking.hightconcurrent._03_threadsafety.base;
+package prosayj.thinking.hightconcurrent._03_threadsafety.support;
 
 /**
  * 数字操作类
@@ -10,7 +10,7 @@ package prosayj.thinking.hightconcurrent._03_threadsafety.base;
 public class NumberOperator {
     private int i;
 
-    public void increasing() {
+    public  void increasing() {
         i++;
     }
 

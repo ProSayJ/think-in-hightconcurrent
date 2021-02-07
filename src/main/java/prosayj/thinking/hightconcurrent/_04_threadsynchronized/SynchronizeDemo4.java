@@ -1,9 +1,8 @@
 package prosayj.thinking.hightconcurrent._04_threadsynchronized;
 
-import prosayj.thinking.hightconcurrent._04_threadsynchronized.base.MyThread;
-import prosayj.thinking.hightconcurrent._04_threadsynchronized.base.Syn;
-import prosayj.thinking.hightconcurrent._04_threadsynchronized.base.SynUseInstanceMethods;
-import prosayj.thinking.hightconcurrent._04_threadsynchronized.base.SynUseStaticMethods;
+import prosayj.thinking.hightconcurrent._04_threadsynchronized.support.MyThread;
+import prosayj.thinking.hightconcurrent._04_threadsynchronized.support.Syn;
+import prosayj.thinking.hightconcurrent._04_threadsynchronized.support.SynUseStaticMethods;
 
 /**
  * 使用静态方法同步

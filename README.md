@@ -1,6 +1,9 @@
 # think-in-hightconcurrent
+
 java-高并发
+
 ## 第一阶段
+
 - 1：java多线程介绍
 - 2：多线程变成入门
 - 3：线程创建与启动以及线程状态
@@ -18,5 +21,5 @@ java-高并发
 - 15：自定义线程锁详解
 - 16：FIFO队列与线程
 - 17：多线程API查漏补缺
-
-
+  
+https://segmentfault.com/a/1190000020287859
