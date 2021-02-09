@@ -69,3 +69,18 @@
 ## 6.2：join和yield
 
 - 这两个和sleep一样，不释放持有的锁。
+
+# 七：resume、suspend、stop
+
+- resume和suspend是配套使用的，suspend方法容易导致死锁。
+- stop方法不会保证线程的资源正常释放
+
+# 八、interrupt
+
+- interrupt()方法：给线程打个停止标记，将线程的中断状态设置为true，并没有马上强制中断线程，线程是否中断由线程自己决定。
+- isInterrupted()方法：判断当前线程是否中断，不清除中断标志。终结状态，还是返回false。
+- interrupted()方法：判断当前线程是否中断，清除中断标志。
+
+> 如果抛出异常，中断状态设置为false。
+
+
