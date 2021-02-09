@@ -9,7 +9,7 @@ import prosayj.thinking.hightconcurrent._06_threadlifecycle.support.PersonThread
  * <p>
  * 大部分人喜欢看连续剧，但是不看广告（没钱买VIP），于是就让别人提醒她广告结束了没有，如果结束了，就提醒她。
  *
- * @author yangjian201127@credithc.com
+ * @author yangjian
  * @date 2021-02-06 下午 01:50
  * @since 1.0.0
  */

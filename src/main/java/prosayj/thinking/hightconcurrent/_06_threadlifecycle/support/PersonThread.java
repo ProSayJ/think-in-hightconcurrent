@@ -3,7 +3,7 @@ package prosayj.thinking.hightconcurrent._06_threadlifecycle.support;
 /**
  * TODO
  *
- * @author yangjian201127@credithc.com
+ * @author yangjian
  * @date 2021-02-06 下午 01:57
  * @since 1.0.0
  */

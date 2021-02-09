@@ -10,7 +10,7 @@ import static java.lang.Thread.sleep;
 /**
  * InterruptDemo
  *
- * @author yangjian201127@credithc.com
+ * @author yangjian
  * @date 2021-02-09 下午 04:40
  * @since 1.0.0
  * <p>
