@@ -13,20 +13,20 @@ import java.util.concurrent.TimeUnit;
  * @since 1.0.0
  */
 public class CountDownLatchDemo {
-    static CountDownLatch countDownLatch = new CountDownLatch(5);
-
     public static void main(String[] args) {
+        CountDownLatch countDownLatch = new CountDownLatch(5);
+        boolean await = false;
+        System.out.println(Thread.currentThread().getName() + "：start~~~");
         new ForkJoinCountDownLatch("t1", countDownLatch).start();
         new ForkJoinCountDownLatch("t2", countDownLatch).start();
         new ForkJoinCountDownLatch("t3", countDownLatch).start();
         new ForkJoinCountDownLatch("t4", countDownLatch).start();
         new ForkJoinCountDownLatch("t5", countDownLatch).start();
         try {
-            countDownLatch.await(5_000, TimeUnit.SECONDS);
+            await = countDownLatch.await(6, TimeUnit.SECONDS);
         } catch (InterruptedException e) {
-            System.out.println("等不及了~~~");
             e.printStackTrace();
         }
-        System.out.println(Thread.currentThread().getName() + ":" + 3);
+        System.out.println(Thread.currentThread().getName() + "：end~~~,等待结果是：" + (await ? "等待子任务执行都执行完了" : "等不及了~~~"));
     }
 }

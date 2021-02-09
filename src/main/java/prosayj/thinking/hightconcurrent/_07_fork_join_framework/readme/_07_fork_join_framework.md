@@ -40,3 +40,24 @@
 ForkJoinPool
 
 - 通过调用invoke来执行ForkJoinTask的任务。
+
+### 4.1 ForkJoinRecursiveTask
+
+### 4.2 ForkJoinRecursiveAction
+
+### 4.3 ForkJoinCountDownLatch
+
+### 4.4 ForkJoinCyclicBarrier
+
+- 作用
+
+> 屏障拦截，构造参数可以传递拦截的线程数量，以及拦截后调用的Runnable类。每当线程调用await方法的时候，就告诉CyclicBarrier已经到达了屏障，然后阻塞在那边，等全部线程都到达了屏障，线程开始执行。
+
+- 主要方法
+
+> await：告诉CyclicBarrier已经到达了屏障
+
+#### 4.5CountDownLatch和CyclicBarrier
+- CountDownLatch可以一个线程执行多次countDown，CyclicBarrier执行多次是无效的。
+- CountDownLatch是由外部决定下一步的，CyclicBarrier是由多个线程自己决定下一步的。
+- 比如上课点名，有些老师很随意，只要人数满了，就开始上课，不管有部分学生变音喊到，都记有人来上课，这个时候就是CountDownLatch。有些课程没有老师，位置坐满人了，AI播放视频开始上课，这个时候就是CyclicBarrier。
