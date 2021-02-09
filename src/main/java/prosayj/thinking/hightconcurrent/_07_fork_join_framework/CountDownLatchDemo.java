@@ -1,6 +1,9 @@
 package prosayj.thinking.hightconcurrent._07_fork_join_framework;
 
+import prosayj.thinking.hightconcurrent._07_fork_join_framework.support.ForkJoinCountDownLatch;
+
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 /**
  * TODO
@@ -10,29 +13,18 @@ import java.util.concurrent.CountDownLatch;
  * @since 1.0.0
  */
 public class CountDownLatchDemo {
-    static CountDownLatch countDownLatch = new CountDownLatch(2);
-
-    static class Thread1 implements Runnable {
-        @Override
-        public void run() {
-            countDownLatch.countDown();
-            System.out.println(Thread.currentThread().getName() + ":" + 1);
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            System.out.println(Thread.currentThread().getName() + ":" + 2);
-            countDownLatch.countDown();
-        }
-    }
+    static CountDownLatch countDownLatch = new CountDownLatch(5);
 
     public static void main(String[] args) {
-        Thread thread =new Thread(new Thread1(),"thread");
-        thread.start();
+        new ForkJoinCountDownLatch("t1", countDownLatch).start();
+        new ForkJoinCountDownLatch("t2", countDownLatch).start();
+        new ForkJoinCountDownLatch("t3", countDownLatch).start();
+        new ForkJoinCountDownLatch("t4", countDownLatch).start();
+        new ForkJoinCountDownLatch("t5", countDownLatch).start();
         try {
-            countDownLatch.await();
+            countDownLatch.await(5_000, TimeUnit.SECONDS);
         } catch (InterruptedException e) {
+            System.out.println("等不及了~~~");
             e.printStackTrace();
         }
         System.out.println(Thread.currentThread().getName() + ":" + 3);
