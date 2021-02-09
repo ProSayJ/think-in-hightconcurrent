@@ -2,7 +2,9 @@ package prosayj.thinking.hightconcurrent._07_fork_join_framework;
 
 import prosayj.thinking.hightconcurrent._07_fork_join_framework.support.ForkJoinCyclicBarrier;
 
+import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * CyclicBarrierDemo
@@ -16,8 +18,8 @@ import java.util.concurrent.CyclicBarrier;
  */
 public class CyclicBarrierDemo {
     public static void main(String[] args) {
-        Integer num = 0;
-        CyclicBarrier cyclicBarrier = new CyclicBarrier(2, new ForkJoinCyclicBarrier("t3", null, null, null));
+        AtomicReference<Integer> num = new AtomicReference<>(0);
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(2, new ForkJoinCyclicBarrier("t3", null, num, null));
         new ForkJoinCyclicBarrier("t1", cyclicBarrier, num, 5000L).start();
         new ForkJoinCyclicBarrier("t2", cyclicBarrier, num, 1000L).start();
         System.out.println(Thread.currentThread().getName() + ":num=" + num);
