@@ -57,7 +57,32 @@ ForkJoinPool
 
 > await：告诉CyclicBarrier已经到达了屏障
 
-#### 4.5CountDownLatch和CyclicBarrier
+### 4.5CountDownLatch和CyclicBarrier
+
 - CountDownLatch可以一个线程执行多次countDown，CyclicBarrier执行多次是无效的。
 - CountDownLatch是由外部决定下一步的，CyclicBarrier是由多个线程自己决定下一步的。
 - 比如上课点名，有些老师很随意，只要人数满了，就开始上课，不管有部分学生变音喊到，都记有人来上课，这个时候就是CountDownLatch。有些课程没有老师，位置坐满人了，AI播放视频开始上课，这个时候就是CyclicBarrier。
+
+### 4.6 Semaphore
+
+#### 作用
+
+> 信号量，限制同一时间，访问特定资源的线程数量，以保证合理的使用特定资源。
+
+#### 主要方法
+
+- acquire:获取锁，如果没有获取到，就堵塞
+- release:释放锁
+
+### 4.7 FutureTask
+
+#### 主要的方法:
+
+- cancel(boolean mayInterruptIfRunning)：
+    - 取消任务的执行失败，返回false，比如任务已经执行结束，或者已经被取消，或者不能被取消。如果执行成功了，返回ture。mayInterruptIfRunning的作用是是否中断，如果是true则中断，本质还是调用interrupt方法。
+- isCancelled：
+    - 判断任务是否被取消，任务结束包括正常执行结束或异常结束，返回true。
+- isDone：
+    - 是否执行结束，包括正常执行结束或异常结束。结束返回true。
+- get：
+    - 获取返回值，没有得到返回值前一直阻塞。
