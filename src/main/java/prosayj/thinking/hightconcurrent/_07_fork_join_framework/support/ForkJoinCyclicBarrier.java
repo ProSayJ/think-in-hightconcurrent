@@ -13,31 +13,33 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 public class ForkJoinCyclicBarrier extends Thread {
     private final CyclicBarrier cyclicBarrier;
-    private final Long costTime;
+    private final Long loopTimes;
     private final AtomicReference<Integer> num;
 
 
-    public ForkJoinCyclicBarrier(String threadName, CyclicBarrier cyclicBarrier, AtomicReference<Integer> num, Long costTime) {
+    public ForkJoinCyclicBarrier(String threadName, CyclicBarrier cyclicBarrier, AtomicReference<Integer> num, Long loopTimes) {
         super(threadName);
         this.cyclicBarrier = cyclicBarrier;
         this.num = num;
-        this.costTime = costTime;
+        this.loopTimes = loopTimes;
     }
 
     @Override
     public void run() {
-        if (cyclicBarrier == null) {
-            System.out.println(Thread.currentThread().getName() + "(cyclicBarrier==null):num=" + num);
-        } else {
-            try {
-                num.updateAndGet(v -> v + 1);
-                Thread.sleep(costTime);
-                cyclicBarrier.await();
-                System.out.println(Thread.currentThread().getName() + ":num=" + num);
-            } catch (InterruptedException | BrokenBarrierException e) {
-                e.printStackTrace();
-            }
-        }
+        System.out.println(Thread.currentThread().getName() + " start~~");
+        try {
+            long startTime = System.currentTimeMillis();
 
+            for (int i = 0; i < loopTimes; i++) {
+                num.updateAndGet(value -> value + 1);
+            }
+
+            System.out.println(Thread.currentThread().getName() +
+                    " end~~ 结果是：" + num.get() +
+                    "共耗时：" + (System.currentTimeMillis()-startTime) + "ms~~");
+            cyclicBarrier.await();
+        } catch (InterruptedException | BrokenBarrierException e) {
+            e.printStackTrace();
+        }
     }
 }

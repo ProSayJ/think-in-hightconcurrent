@@ -1,6 +1,7 @@
 package prosayj.thinking.hightconcurrent._07_fork_join_framework.support;
 
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * ForkJoinCountDownLatch
@@ -11,19 +12,19 @@ import java.util.concurrent.CountDownLatch;
  */
 public class ForkJoinCountDownLatch extends Thread {
     private final CountDownLatch countDownLatch;
+    private final AtomicReference<Integer> num;
 
-    public ForkJoinCountDownLatch(String threadName, CountDownLatch countDownLatch) {
+    public ForkJoinCountDownLatch(String threadName, CountDownLatch countDownLatch, AtomicReference<Integer> num) {
         super(threadName);
         this.countDownLatch = countDownLatch;
+        this.num = num;
     }
 
     @Override
     public void run() {
-        try {
-            System.out.println(Thread.currentThread().getName() + "：start~~~");
-            Thread.sleep(5_000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        System.out.println(Thread.currentThread().getName() + "：start~~~");
+        for (int i = 0; i < 100000; i++) {
+            num.updateAndGet(value -> value + 1);
         }
         System.out.println(Thread.currentThread().getName() + "：end~~~");
         countDownLatch.countDown();
