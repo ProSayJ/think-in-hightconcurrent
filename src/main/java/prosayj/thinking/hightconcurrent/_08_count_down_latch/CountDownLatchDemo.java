@@ -1,6 +1,6 @@
-package prosayj.thinking.hightconcurrent._07_fork_join_framework;
+package prosayj.thinking.hightconcurrent._08_count_down_latch;
 
-import prosayj.thinking.hightconcurrent._07_fork_join_framework.support.ForkJoinCountDownLatch;
+import prosayj.thinking.hightconcurrent._08_count_down_latch.support.ForkJoinCountDownLatch;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;

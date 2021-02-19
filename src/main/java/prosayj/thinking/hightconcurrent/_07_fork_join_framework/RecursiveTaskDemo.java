@@ -8,12 +8,16 @@ import java.util.concurrent.ForkJoinPool;
 
 /**
  * 两次结果是一样的。
+ * <p>
+ * 创建ForkJoinPool对象。
+ * 创建继承RecursiveTask的类，实现compute方法，这里主要是计算以及拆分任务、合并结果。
+ * pool.invoke方法调用。
  *
  * @author yangjian
  * @date 2021-02-09 下午 05:41
  * @since 1.0.0
  */
-public class RecursiveTaskDemo{
+public class RecursiveTaskDemo {
 
     public static void main(String[] args) {
         ForkJoinPool pool = new ForkJoinPool();

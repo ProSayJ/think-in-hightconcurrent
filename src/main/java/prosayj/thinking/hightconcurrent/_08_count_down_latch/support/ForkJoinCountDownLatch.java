@@ -1,4 +1,4 @@
-package prosayj.thinking.hightconcurrent._07_fork_join_framework.support;
+package prosayj.thinking.hightconcurrent._08_count_down_latch.support;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;

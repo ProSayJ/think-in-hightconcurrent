@@ -1,6 +1,6 @@
-package prosayj.thinking.hightconcurrent._07_fork_join_framework;
+package prosayj.thinking.hightconcurrent._09_cyclic_barrier;
 
-import prosayj.thinking.hightconcurrent._07_fork_join_framework.support.ForkJoinCyclicBarrier;
+import prosayj.thinking.hightconcurrent._09_cyclic_barrier.support.ForkJoinCyclicBarrier;
 
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.atomic.AtomicReference;

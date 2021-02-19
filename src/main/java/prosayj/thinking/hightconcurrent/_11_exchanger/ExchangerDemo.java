@@ -1,6 +1,6 @@
-package prosayj.thinking.hightconcurrent._07_fork_join_framework;
+package prosayj.thinking.hightconcurrent._11_exchanger;
 
-import prosayj.thinking.hightconcurrent._07_fork_join_framework.support.ForkJoinExchanger;
+import prosayj.thinking.hightconcurrent._11_exchanger.support.ForkJoinExchanger;
 
 import java.util.concurrent.Exchanger;
 

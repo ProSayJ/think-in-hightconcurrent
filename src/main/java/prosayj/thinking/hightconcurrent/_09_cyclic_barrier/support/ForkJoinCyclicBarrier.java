@@ -1,4 +1,4 @@
-package prosayj.thinking.hightconcurrent._07_fork_join_framework.support;
+package prosayj.thinking.hightconcurrent._09_cyclic_barrier.support;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

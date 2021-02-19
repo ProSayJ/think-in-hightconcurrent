@@ -1,6 +1,6 @@
-package prosayj.thinking.hightconcurrent._07_fork_join_framework;
+package prosayj.thinking.hightconcurrent._10_semaphore;
 
-import prosayj.thinking.hightconcurrent._07_fork_join_framework.support.ForkJoinSemaphore;
+import prosayj.thinking.hightconcurrent._10_semaphore.support.ForkJoinSemaphore;
 
 import java.util.concurrent.Semaphore;
 
